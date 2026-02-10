@@ -76,6 +76,8 @@ Jenkins-In-Docker
 
 Everything is automated using a Makefile.
 
+---
+
 ## 1️⃣ Create Infrastructure & Deploy Jenkins
 
 Run the following command:
