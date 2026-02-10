@@ -1,0 +1,24 @@
+- name: Run Jenkins using Docker Compose
+  hosts: role_docker
+  become: true
+
+  tasks:
+    - name: Ensure Jenkins directory exists
+      file:
+        path: /opt/jenkins
+        state: directory
+        owner: root
+        group: root
+        mode: "0755"
+
+    - name: Copy Jenkins Docker files to EC2
+      copy:
+        src: ../../jenkins/
+        dest: /opt/jenkins/
+        owner: root
+        group: root
+
+    - name: Start Jenkins using Docker Compose
+      command: docker compose up -d --build
+      args:
+        chdir: /opt/jenkins
