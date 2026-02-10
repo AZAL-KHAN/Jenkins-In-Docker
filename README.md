@@ -56,6 +56,7 @@ Jenkins-In-Docker
     ├── variables.tf
     └── vpc.tf
 ```
+---
 
 ## ⚙️ Prerequisites
 
@@ -95,6 +96,8 @@ This will:
 
 - No manual SSH is required at any stage.
 
+---
+
 ## 🔄 Automated Jenkins Deployment
 
 Jenkins is deployed automatically using Ansible playbooks.
@@ -106,6 +109,7 @@ container on the EC2 instance.
 A dynamic Ansible inventory is used to discover the EC2 instance automatically,
 so no manual SSH access or hardcoded IP addresses are required at any stage.
 
+---
 
 ## 🔑 Get Jenkins Initial Admin Password
 
@@ -117,6 +121,8 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 Use this password to complete the Jenkins setup via the web UI.
 
+---
+
 ## 💾 Persistent Storage
 
 - Jenkins data is stored using Docker volumes
@@ -124,6 +130,8 @@ Use this password to complete the Jenkins setup via the web UI.
 - Ensures Jenkins configuration, jobs, and plugins persist across container restarts
 
 - Supports an immutable Jenkins setup while retaining data durability
+
+---
 
 ## 🏁 Conclusion
 
